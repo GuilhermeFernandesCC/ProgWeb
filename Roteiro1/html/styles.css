@@ -1,0 +1,124 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+}
+
+.container {
+    /* ETAPA 6 */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    /* ETAPA 6 Redução de padding e fonte*/
+    font-size: 14px;
+    padding: 5px;
+    /* ETAPA 2 */
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* ETAPA 2 */
+nav ul li a i {
+    margin-right: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+.section {
+    
+    padding: 80px 0;
+
+    background-color: #fff;
+}
+
+.section h2 {
+    /* ETAPA 6 Redução de fonte*/
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cardapio-item {
+    /* ETAPA 4 */
+    /* ETAPA 6 */
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+}
+
+/* ETAPA 3 */
+.cardapio-item h3{
+
+    font-size: (px);
+    color: #555;
+    font-family: 'Roboto',Arial, sans-serif;
+}
+
+/* ETAPA 4 */
+.cardapio-item:hover {
+    transform: translate(-5px);
+    background-color: #adadad; 
+}
+
+/* ETAPA 5 */
+header {
+    background-color: #333;
+    color: #fff;
+    /* ETAPA 6  redu~ção padding*/
+    padding: 5px 0;
+    /* DESAFIO 1 */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-image: linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.6)), url('img/header-bg.jpg');
+}
+header div
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    /* ETAPA 5 */
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)), url('img/footer-bg.jfif');
+}
