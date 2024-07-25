@@ -150,13 +150,21 @@ img{
 }
 
 /*etapa 10*/
-.lista-tematicas{
+
+.lista-tematica{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
     list-style: none;
     padding: 0;
 }
+
 .lista-tematicas__item{
-    margin-left: -15px;
-    margin-right: -15px;
+    display: flex;
+    align-self: flex-start;
+    margin-left: 0;
+    margin-right: 0;
 }
 .lista-tematicas__item a{
     text-decoration: none;
@@ -167,3 +175,4 @@ img{
     margin-left: 15px;
     border-left: 1px solid #000;
 }
+
