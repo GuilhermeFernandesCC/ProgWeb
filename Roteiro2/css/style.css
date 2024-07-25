@@ -152,17 +152,15 @@ img{
 /*etapa 10*/
 
 .lista-tematica{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    justify-content: space-around;
     list-style: none;
-    padding: 0;
+    padding: 20px;
 }
 
 .lista-tematicas__item{
-    display: flex;
-    align-self: flex-start;
+    margin-top: 40px;
     margin-left: 0;
     margin-right: 0;
 }
