@@ -1,0 +1,39 @@
+<!--Desenvolva uma página HTML capaz de efetuar o fatorial dos números que se encontram na lista de
+inteiros (separados por vírgula) de um dado campo de entrada, a partir do click de um botão.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 08</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var saida = [];
+            
+            function fatorial(item){
+                var itemInt = parseInt(item,10);
+                if(itemInt==1){
+                    return 1;
+                }else{
+                    var aux = itemInt * fatorial(itemInt-1)
+                    return aux;
+                }
+            }
+            function myFunction(item){
+                saida.push(fatorial(item));
+            }
+            
+            function listarFatoriais(){
+                var entrada = document.getElementById("list").value;
+                var listaStr = entrada.split(",");
+                listaStr.forEach(myFunction);
+                document.write("Lista de Fatoriais " + saida);
+            }
+        </script>
+    </head>
+
+    <body>
+        Lista: <input type="text" id="list">
+        <input type="button" value="Fatorial" onclick="listarFatoriais()">
+    </body>
+
+</html> 
