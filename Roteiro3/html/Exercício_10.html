@@ -1,0 +1,32 @@
+<!--Desenvolva uma página HTML capaz de inverter os valores (ex:[1, 5, 7, 2] fica [2, 7, 5, 1]) na lista de
+inteiros (separados por vírgula) de um dado campo de entrada, a partir do click de um botão.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 10</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var saida = []
+
+            function myFunction(item){
+                saida.push(parseInt(item,10))
+            }
+            
+            function inverso(){
+                var entrada = document.getElementById("list").value;
+                var listaStr = entrada.split(",");
+
+                listaStr.forEach(myFunction);
+                saida.reverse()
+                document.write("Lista Invertida :" + saida);
+            }
+        </script>
+    </head>
+
+    <body>
+        Lista: <input type="text" id="list">
+        <input type="button" value="Inverter" onclick="inverso()">
+    </body>
+
+</html> 
