@@ -1,0 +1,51 @@
+<!--Desenvolva uma página HTML capaz de escrever a média aritmética dos valores lidos, a quantidade de
+valores positivos, a quantidade de valores negativos e o percentual de valores negativos e positivos na lista de
+inteiros (separados por vírgula) de um dado campo de entrada, a partir do click de um botão.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 09</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var media = 0.0;
+            var total = 0;
+            var positivos = 0;
+            var negativos = 0;
+
+            function myFunction(item){
+                itemInt = parseInt(item,10)
+                total+=1;
+                media+=itemInt;
+                if(itemInt<0){
+                    negativos+=1;
+                }else{
+                    positivos+=1;
+                }
+            }
+            
+            function mediaAri(){
+                var entrada = document.getElementById("list").value;
+                var listaStr = entrada.split(",");
+
+                listaStr.forEach(myFunction);
+
+                var porcentagemP = ((positivos/total)*100).toFixed(2)
+                var porcentagemN = ((negativos/total)*100).toFixed(2)
+
+                media = (media/total).toFixed(2);
+                
+                document.write("Media :" + media+"<br>"
+                    +"Numero de Positivos :" + positivos +" Porcentagem:"+porcentagemP+"%"+"<br>"
+                    +"Numero de Negativos :" + negativos +" Porcentagem:"+porcentagemN+"%"
+                );
+            }
+        </script>
+    </head>
+
+    <body>
+        Lista: <input type="text" id="list">
+        <input type="button" value="Tirar Media" onclick="mediaAri()">
+    </body>
+
+</html> 
