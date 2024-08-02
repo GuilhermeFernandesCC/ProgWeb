@@ -1,0 +1,32 @@
+<!--Desenvolva uma página HTML capaz de efetuar a soma de todos os números ímpares que são múltiplos de
+três e que se encontram dentro dos números inteiros (separados por vírgula) de um dado campo de entrada, a
+partir do click de um botão.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 07</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var soma = 0;
+            function mySoma(item){
+                itemInt = parseInt(item,10)
+                if (itemInt%2==1 && itemInt%3==0) {
+                    soma += itemInt;
+                }
+            }
+            function somarImparX3(){
+                var entrada = document.getElementById("list").value;
+                var listaStr = entrada.split(",");
+                listaStr.forEach(mySoma);
+                document.write("Soma Ímpares Multiplos de 3: " + soma);
+            }
+        </script>
+    </head>
+
+    <body>
+        Lista: <input type="text" id="list">
+        <input type="button" value="Somar Ímpares %3" onclick="somarImparX3()">
+    </body>
+
+</html> 
