@@ -1,0 +1,29 @@
+<!--Desenvolva uma página HTML capaz de ordenar uma lista de inteiros (separados por vírgula) de um dado
+campo de entrada, a partir do click de um botão.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 06</title>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var listaInt = [];
+            function strToInt(item){
+                listaInt.push(parseInt(item,10));
+            }
+            function sortInt(){
+                var entrada = document.getElementById("list").value;
+                var listaStr = entrada.split(",")
+                listaStr.forEach(strToInt);
+                listaInt.sort();
+                document.write("Lista Ordenada: " + listaInt);
+            }
+        </script>
+    </head>
+
+    <body>
+        Texto: <input type="text" id="list">
+        <input type="button" value="Ordenar Inteiros" onclick="sortInt()">
+    </body>
+
+</html> 
