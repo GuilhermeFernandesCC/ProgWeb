@@ -1,16 +1,21 @@
-/*Escreva duas funções arrow, uma para progressão aritmética e outra para progressão geométrica. Estas
-funções receberam como parâmetros um objeto (criado por você, lembre-se que deves escolher bons nomes)
-contendo os seguinte parâmetros: id: Number (identificador da função); nome: String (nome da função); n:
-Number (número de termo), a1:Number (o primeiro termo) e r :Number (a razão). Esse objeto vai ser passado
-com parâmetro para as duas funções, e com o uso do operador de desestruturação, só devem ser passados como
-parâmetros os atributos n, a1 e r. As funções devem imprimir os n termos, bem como a soma dos elementos.*/
+/*Escreva uma função do tipo Arrow que receba como parâmetro um vetor de notas e mostre os conceitos de
+cada uma de modo que de 0,0 a 4,9 seja atribuído o conceito D, de 5,0 a 6,9 seja atribuído o conceito C, de 7,0 a
+8,9 o conceito B e de 9,0 a 10,0 o conceito A. Atenção: a função deve utilizar alguma função callback.*/
 
-const notas = []
+const notas = [4.5,6.7,8,9,10]
 
-const correcao = nota => 
+const correcao = nota => {
+    if (nota<5) {
+        return 'D'
+    }else if(nota<7) {
+        return 'C'
+    }else if(nota<9){
+        return 'B'
+    }else {
+        return 'A'
+    }
+}
 
-notas.map
+const conceitos = notas.map(correcao)
 
-prog_a(entrada)
-console.log(soma_pa)
-console.log(lista_pa)
+console.log(conceitos)
