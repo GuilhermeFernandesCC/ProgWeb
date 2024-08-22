@@ -13,6 +13,7 @@ const colocarTodasLetrasEmMaiusculoEm500ms = palavra =>  {
         }, 500)
     })
 }
+
 const inverteTodasLetras = palavra => {
     return new Promise((resolve, reject) => {
         //setTimeout = recebe em milisegundos, por isso está multiplicado por 1000
@@ -28,9 +29,14 @@ const inverteTodasLetras = palavra => {
         }, 500)
     })
 }
-colocarTodasLetrasEmMaiusculoEm500ms("banana")
-    .then(saida => {
-        inverteTodasLetras(saida)
-            .then(saida2 => console.log(saida2))
-    })
+
+let obterAlunos = async (palavra) => {
+    const maiuscula = await colocarTodasLetrasEmMaiusculoEm500ms(palavra)
+    const inversa = await inverteTodasLetras(maiuscula)
+    return inversa
+}
+
+obterAlunos("banana")
+    .then(saida => console.log(saida))
+
 
