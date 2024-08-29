@@ -112,6 +112,25 @@ function validarFormulario() {
     const erro = document.getElementById('mensagem-erro');
     
     erro.textContent = '';
+    const reCPF = new RegExp('^\d{3}\.\d{3}\.\d{3}\/\d{2}$')
+    const reEmail = new RegExp('^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$')
+    
+    if (nome==''){
+        erro.textContent = 'Nome invalido'
+        return false;
+    }
+    if (reCPF.test(cpf)){
+        erro.textContent = 'Cpf invalido'
+        return false;
+    }
+    if (! reEmail.test(email)){
+        erro.textContent = 'Email invalido'
+        return false;
+    }
+    if (senha.length<8){
+        erro.textContent = 'Senha com menos de 8 characteres'
+        return false;
+    }
     return true;
 }
 
