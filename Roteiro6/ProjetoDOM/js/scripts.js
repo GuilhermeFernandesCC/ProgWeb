@@ -142,14 +142,31 @@ function validarFormulario() {
 let contador = 0;
 function incrementar() {
     contador++;
+    const p = document.getElementById("contador")
+    p.textContent = `${contador}`
+    geraMusicaElefante(contador)
 }
 
 function decrementar() {
     contador--;
+    const p = document.getElementById("contador")
+    p.textContent = `${contador}`
+    geraMusicaElefante(contador)
 }
 
 function geraMusicaElefante(numVersos){
-
+    let musica = '1 Elefante Incomoda Muita Gente\n'
+    for (let index = 2; index <= numVersos; index++){
+        const base = `${index} Elefantes `
+        const incomodam = "incomodam, "
+        if(index%2==1){
+            musica += base + "incomodam muita gente\n"
+        }else{
+            musica += base + incomodam.repeat(index-1) + " incomodam muito mais\n"
+        }
+       
+    }
+    document.getElementById("paragrafoMusica").textContent = musica
 }
 
 // Exercício 10: Filtrar Itens de uma Lista com callback e arrow function
