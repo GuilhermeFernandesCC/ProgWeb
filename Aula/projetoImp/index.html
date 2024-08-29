@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programação para Web I</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Programação para web I</h1>
-        <nav>
-            <button>Abrir/fechar Menu</button>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html">Sobre Programação para Web I</a></li>
-                <li><a href="tematicas.html">Temáticas</a></li>
-                <li><a href="contatos.html">Contato</a></li>
+    <header class="cabecalho">
+        <h1 class="logo">Programação para web I</h1>
+        <nav class="menu-principal menu-principal--fechado">
+            <button class="menu-principal__btn">Abrir/fechar Menu</button>
+            <ul class="menu-principal__lista">
+                <li><a href="index.html" class="menu-principal__item menu-principal__item--atual">Home</a></li>
+                <li><a class="menu-principal__item" href="sobre.html">Sobre Programação para Web I</a></li>
+                <li><a class="menu-principal__item" href="tematicas.html">Temáticas</a></li>
+                <li><a class="menu-principal__item" href="contatos.html">Contato</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <!-- <h1>Página Inicial</h1> -->
-         <header>
-            <h2>Programação para Web</h2>
+        <header class="pagina-cabecalho">
+            <h1 class="pagina-cabecalho__titulo">Programação para Web</h1>
             <p>Aprenda a desenvolver sites e sistemas para a web</p>
             <a href="#atividades">role para ver mais</a>
         </header>
@@ -53,34 +54,35 @@
             </section>
         </section><!-- Fim da seção de depoimentos dos alunos -->
     </main>
-    <footer>
-        <div>
-            <div>
+    <footer class="rodape">
+        <div class="rodape__linha-1">
+            <div class="rodape_coluna">
                 <a href="index.html">Programação para Web I</a>
                 <p>O objetivo geral do curso é proporcionar ao estudante uma introdução às linguagens e tecnologias fundamentais da web (frontend): HTML, CSS, JavaScript, HTTP e o browser.</p>
             </div>
-            <div>
-                <h2>Informações Gerais</h2>
-                <ul>
-                    <li><a href="https://www.computacao.ufcg.edu.br/unidade-acad%C3%AAmica">Unidade Acadêmica de Sistemas e Computação</a></li>
-                    <li><a href="https://www.computacao.ufcg.edu.br/graduacao">Graduação</a></li>
-                    <li><a href="https://www.computacao.ufcg.edu.br/mestrado-e-doutorado">Pós-Graduação</a></li>
-                    <li><a href="https://www.computacao.ufcg.edu.br/servi%C3%A7os">Serviços</a></li>
+            <div class="rodape_coluna">
+                <h2 class="rodape__titulo">Informações Gerais</h2>
+                <ul class="rodape__lista-links">
+                    <li"><a class="rodape__lista-links__item" href="https://www.computacao.ufcg.edu.br/unidade-acad%C3%AAmica">Unidade Acadêmica de Sistemas e Computação</a></li>
+                    <li"><a class="rodape__lista-links__item" href="https://www.computacao.ufcg.edu.br/graduacao">Graduação</a></li>
+                    <li"><a class="rodape__lista-links__item" href="https://www.computacao.ufcg.edu.br/mestrado-e-doutorado">Pós-Graduação</a></li>
+                    <li"><a class="rodape__lista-links__item" href="https://www.computacao.ufcg.edu.br/servi%C3%A7os">Serviços</a></li>
                 </ul>
             </div>
-            <div>
-                <h2>Links</h2>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre Programação para Web I</a></li>
-                    <li><a href="tematicas.html">Temáticas</a></li>
-                    <li><a href="contatos.html">Contato</a></li>
+            <div class="rodape_coluna">
+                <h2 class="rodape__titulo">Links</h2>
+                <ul class="rodape__lista-links">
+                    <li><a class="rodape__lista-links__item" href="index.html">Home</a></li>
+                    <li><a class="rodape__lista-links__item" href="sobre.html">Sobre Programação para Web I</a></li>
+                    <li><a class="rodape__lista-links__item" href="tematicas.html">Temáticas</a></li>
+                    <li><a class="rodape__lista-links__item" href="contatos.html">Contato</a></li>
                 </ul>
             </div>
         </div>
-        <div>
+        <div class="rodape__linha-2">
             <p>Todos os direitos reservados PW.</p>
         </div>
     </footer>
+    <script src="javascript/script.js"></script>
 </body>
 </html>
