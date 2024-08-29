@@ -15,13 +15,23 @@ const alterarTextos = () => {
 //Dica03: Utilize a propriedade "ul.children.length" para saber a quantidade de itens na lista
 //Dica04: Utilize a propriedade "ul.appendChild" para adicionar o li na lista
 function adicionarItem() {
-    //TODO
+    const lista = document.getElementById("listaItens")
+    const i = lista.children.length + 1
+    const li = document.createElement('li')
+    li.innerHTML = `Item ${i}`
+
+    document.getElementById("listaItens").appendChild(li)
+
 }
 
 //Dica05: Utilize as propriedades "ul.removeChild" e "ul.lastChild" para fazer remoções de li na lista
 //Dica06: Lembre-se de só deixar remover se a lista tiver pelo menos um elemento
 function removerItem() {
-    //TODO
+    const lista = document.getElementById("listaItens")
+    if (lista.children.length>1) {
+        lista.removeChild(lista.lastChild)
+    }
+        
 }
 
 //Etapa 3: Modificar estilos de inputs do tipo text
