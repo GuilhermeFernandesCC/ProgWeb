@@ -47,12 +47,14 @@ function mudarCorFundo() {
 //Dica01: Utilize a propriedade "style.display" e o valor da variável estilo para ocultar ou exibir a imagem
 function ocultarImagem() {
     estilo = 'none'
-    //TODO
+    const imagem = document.getElementById("imagem")
+    imagem.style.display = estilo
 }
 
 function exibirImagem() {
     estilo = 'block'
-    //TODO
+    const imagem = document.getElementById("imagem")
+    imagem.style.display = estilo
 }
 
 //Etapa 4: Mover elementos na página
