@@ -2,7 +2,11 @@
 //Dica01: Utilize a propriedade "textContent" para modificar o texto de um parágrafo.
 //Dica02: Utilize a propriedade "value" para recuperar a informação preenchida nos campos de input.
 const alterarTextos = () => {
-    //TODO
+    for (let i = 1; i <= 3; i++) {
+        if (document.getElementById(`input${i}`).value != ''){
+            document.getElementById(`texto${i}`).textContent = document.getElementById(`input${i}`).value
+        }
+    }
 }
 
 //Etapa 2: Adicionar e remover elementos no final da lista de itens
