@@ -39,7 +39,8 @@ function removerItem() {
 //Dica01: Utilize a propriedade "style.backgroundColor" para modificar a cor de fundo dos inputs
 function mudarCorFundo() {
     const inputs = document.querySelectorAll('input[type="text"]');
-    //TODO
+    const cor = document.getElementById("inputCor").value
+    inputs.forEach(ele => ele.style.backgroundColor=cor)
 }
 
 //Etapa 4: Ocultar e Exibir Elementos
