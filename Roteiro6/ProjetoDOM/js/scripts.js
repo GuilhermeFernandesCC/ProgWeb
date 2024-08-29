@@ -97,7 +97,7 @@ function alternarClasse() {
 //Dica01: Utilize a função replace para substitutir o 100 por 300 no valor de src da imagem
 function mostrarImagemMaior(img) {
     const imagemMaior = document.getElementById('imagem-maior');
-    //TODO
+    imagemMaior.src = img.src.replace('100','300')
 }
 
 // Exercício 8: Validação de Formulário
