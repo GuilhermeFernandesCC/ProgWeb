@@ -57,7 +57,7 @@ function exibirImagem() {
     imagem.style.display = estilo
 }
 
-//Etapa 4: Mover elementos na página
+//Etapa 5: Mover elementos na página
 //Dica01: Utilize apenas as propriedades "box.style.left" e "box.style.top" para fazer a movimentação do elemento
 function mover(direcao) {
     const box = document.getElementById('divDeslizavel');
@@ -66,16 +66,16 @@ function mover(direcao) {
     
     switch (direcao) {
         case 'esquerda':
-            //TODO
+            box.style.left = `${left - 10}px`
             break;
         case 'direita':
-            //TODO
+            box.style.left = `${left + 10}px`
             break;
         case 'cima':
-            //TODO
+            box.style.top = `${top - 10}px`
             break;
         case 'baixo':
-            //TODO
+            box.style.top = `${top + 10}px`
             break;
     }
 }
