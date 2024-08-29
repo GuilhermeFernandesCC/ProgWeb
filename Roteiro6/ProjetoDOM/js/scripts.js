@@ -84,9 +84,13 @@ function mover(direcao) {
 //Dica01: Utilize a propriedade "p.classList.toggle" para fazer a alternância
 function alternarClasse() {
     const p = document.getElementById('classeParagrafo');
-    //TODO
     p.classList.toggle('classeAzul');
     p.classList.toggle('classeVermelha');
+    if(p.classList=='classeAzul'){
+        p.textContent = 'Este parágrafo é da classe azul'
+    }else{
+        p.textContent = 'Este parágrafo é da classe vermelha'
+    }
 }
 
 //Exercício 7: Galeria de Imagens com Zoom
