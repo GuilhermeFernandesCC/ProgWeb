@@ -174,15 +174,16 @@ function geraMusicaElefante(numVersos){
 //Desafio02: Transforme a lista de itens em objetos (professor: nome, area, laboratorio, disciplina) e utilize o filtro para atuar considerando todos os atributos do projeto.
 function filtrarItens() {
     const filtro = document.getElementById('filtro').value.toLowerCase();
-    const itens = document.getElementById('lista-professores').getElementsByTagName('li');
-
+    const itens = Array.from(document.getElementById('lista-professores').getElementsByTagName("li"));
     //Converter o comando de repetição abaixo em uma callback que recebe como parâmetro uma arrow function
-    for (let i = 0; i < itens.length; i++) {
-        let item = itens[i].textContent || itens[i].innerText;
-        if (item.toLowerCase().indexOf(filtro) > -1) {
-            itens[i].style.display = "";
-        } else {
-            itens[i].style.display = "none";
+    const filtroAux = word => word.toLowerCase().includes(filtro) 
+    const filtragem = item => {
+        if(filtroAux(item.textContent)){
+            item.style.display = "";
+        }else{
+            item.style.display = "none"
         }
     }
+    itens.forEach(filtragem)
+
 }
