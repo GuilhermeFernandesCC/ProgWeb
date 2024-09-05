@@ -1,6 +1,6 @@
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-function adicionaAoCarrinho(nomeProduto, precoProduto) {
+const adicionaAoCarrinho = (nomeProduto, precoProduto) => {
     const produto = { nome: nomeProduto, preco: precoProduto };
     carrinho.push(produto);
     atualizaContagemCarrinho();
@@ -8,21 +8,21 @@ function adicionaAoCarrinho(nomeProduto, precoProduto) {
     alert(`O produto ${nomeProduto} foi adicionado ao seu carrinho.`);
 }
 
-function atualizaContagemCarrinho() {
+const atualizaContagemCarrinho = () => {
     document.getElementById('carrinho-contagem').textContent = carrinho.length;
 }
 
-function salvarCarrinho() {
+const salvarCarrinho = () => {
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
 }
 
-function carregaCarrinho() {
+const carregaCarrinho = () =>{
     carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     atualizaContagemCarrinho();
     mostrarItensCarrinho();
 }
 
-function mostrarItensCarrinho() {
+const mostrarItensCarrinho = () => {
     const containerCarrinho = document.getElementById('carrinho-container');
     const totalCarrinho = document.getElementById('carrinho-total');
     containerCarrinho.innerHTML = '';
@@ -48,14 +48,14 @@ function mostrarItensCarrinho() {
     totalCarrinho.textContent = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-function removerItemCarrinho(indice) {
+const removerItemCarrinho = indice => {
     carrinho.splice(indice, 1);
     atualizaContagemCarrinho();
     salvarCarrinho();
     mostrarItensCarrinho();
 }
 
-function limpaCarrinho() {
+const limpaCarrinho =()=> {
     carrinho = [];
     atualizaContagemCarrinho();
     salvarCarrinho();
@@ -107,7 +107,7 @@ const enviarDados = (dadosFormulario) => {
 }
 
 //Não mexer neste método
-function submeterDados(event) {
+const submeterDados = event =>{
 
     const dadosFormulario = {
         nome: document.getElementById('nome').value,
