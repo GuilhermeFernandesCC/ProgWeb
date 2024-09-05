@@ -1,5 +1,4 @@
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
 const adicionaAoCarrinho = (nomeProduto, precoProduto) => {
     const produto = { nome: nomeProduto, preco: precoProduto };
     carrinho.push(produto);
@@ -73,8 +72,16 @@ const limpaCarrinho =()=> {
 //Método http para usar: GET
 //Resposta do Reject: reject('Erro ao consultar o CEP'))
 const buscarEndereco = (cep) => {
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
     return new Promise((resolve, reject) => {
-        //TODO
+        fetch(url)
+            .then(res => {
+                if(!res.ok){
+                    reject('Erro ao consultar o CEP')
+                }else{
+                    resolve(res.json())
+                }
+        })
     });
 }
 
@@ -83,7 +90,13 @@ const consultaCep = () => {
     if (cep.length === 8) {
         buscarEndereco(cep)
             .then(data => {
-                //TODO
+                let logradouro = document.getElementById('logradouro')
+                logradouro.value = data.logradouro
+                let cidade = document.getElementById('localidade')
+                cidade.value = data.cidade
+                let estado = document.getElementById('estado')
+                estado.value = data.estado
+
             })
             .catch(error => alert(error));
     } else {
@@ -99,7 +112,7 @@ const consultaCep = () => {
 //Método http para usar: POST
 //Resposta do Reject: reject('Erro ao enviar o formulário'))
 const enviarDados = (dadosFormulario) => {
-
+    const url = 'http://demo2582395.mockable.io/enviar'
     return new Promise((resolve, reject) => {
         //TODO
     });
@@ -135,7 +148,7 @@ const submeterDados = event =>{
 //Método http para usar: GET
 //Resposta do Reject: reject('Erro ao consultar os Produtos'))
 const consultarDadosConcorrencia = () => {
-
+    const url = 'http://demo2582395.mockable.io/produtos'
     return new Promise((resolve, reject) => {
         //TODO
     })
