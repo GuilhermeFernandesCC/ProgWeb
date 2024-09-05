@@ -6,13 +6,20 @@ body {
     height: 100vh;
     margin: 0;
 }
-
+.contato{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
 .container {
+    display:flex;
+    flex-direction: column;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    
 }
 
 h1 {
