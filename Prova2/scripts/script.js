@@ -79,9 +79,17 @@ const buscarEndereco = (cep) => {
                 if(!res.ok){
                     reject('Erro ao consultar o CEP')
                 }else{
-                    resolve(res.json())
+                    return (res.json())
                 }
-        })
+            })
+            .then(data => {
+                if(data.erro){
+                    reject('CEP não encontrado!')
+                }else{
+                    resolve(data)
+                }
+            })
+            .catch(()=>reject("Houve problema de conexão"))
     });
 }
 
@@ -114,7 +122,10 @@ const consultaCep = () => {
 const enviarDados = (dadosFormulario) => {
     const url = 'http://demo2582395.mockable.io/enviar'
     return new Promise((resolve, reject) => {
-        //TODO
+        fetch(url)
+            .then(res=>{
+
+            })
     });
 
 }
