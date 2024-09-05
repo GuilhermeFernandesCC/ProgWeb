@@ -175,13 +175,24 @@ const submeterDados = event =>{
 const consultarDadosConcorrencia = () => {
     const url = 'http://demo2582395.mockable.io/produtos'
     return new Promise((resolve, reject) => {
-        //TODO
+        fetch(url)
+        .then(res => {
+            if(!res.ok){
+                reject('Erro consultar concorrencia');
+            }
+            return res.json();
+            
+        })
+        .then(data => {
+            resolve(data)
+        })
+        .catch(()=>reject("Houve problema de conexão"))
     })
 }
 
 const alterarValoresTabela = (opcao) => {
     consultarDadosConcorrencia().then(data => {
-        //TODO
+        modificaValores(data[opcao])
     }).catch(error => alert(error));
 }
 
