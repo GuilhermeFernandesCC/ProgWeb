@@ -77,15 +77,16 @@ const buscarEndereco = (cep) => {
         fetch(url)
             .then(res => {
                 if(!res.ok){
-                    reject('Erro ao consultar o CEP')
-                }else{
-                    return (res.json())
+                    reject('Erro ao consultar o CEP');
                 }
+                return res.json();
+                
             })
             .then(data => {
                 if(data.erro){
                     reject('CEP não encontrado!')
                 }else{
+                    console.log(data)
                     resolve(data)
                 }
             })
@@ -98,15 +99,15 @@ const consultaCep = () => {
     if (cep.length === 8) {
         buscarEndereco(cep)
             .then(data => {
-                let logradouro = document.getElementById('logradouro')
-                logradouro.value = data.logradouro
-                let cidade = document.getElementById('localidade')
-                cidade.value = data.cidade
-                let estado = document.getElementById('estado')
-                estado.value = data.estado
+                let log = document.getElementById('logradouro');
+                log.value = data.logradouro;
+                let cid = document.getElementById('cidade');
+                cid.value = data.localidade;
+                const est = document.getElementById('estado');
+                est.value = data.estado;
 
             })
-            .catch(error => alert(error));
+            .catch(error => alert(error+"TESTE"));
     } else {
         alert('CEP inválido!');
     }
@@ -122,9 +123,22 @@ const consultaCep = () => {
 const enviarDados = (dadosFormulario) => {
     const url = 'http://demo2582395.mockable.io/enviar'
     return new Promise((resolve, reject) => {
-        fetch(url)
+        fetch(url,{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(dadosFormulario)
+        })
             .then(res=>{
-
+                if(!res.ok){
+                    reject("Erro de Envio de formulario")
+                }else{
+                    return res.json()
+                }
+            })
+            .then(data=>{
+                resolve(data);
             })
     });
 
